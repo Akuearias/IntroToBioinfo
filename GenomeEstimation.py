@@ -5,7 +5,7 @@ from scipy.stats import linregress
 import numpy as np
 
 
-# (i) 生成长度为 G 的随机序列
+# (i) Generate a random sequence whose length is G
 def generate_weighted_sequence(G, probabilities):
     bases = ['A', 'T', 'C', 'G']
     sequence = ''.join(random.choices(bases, weights=probabilities, k=G))
@@ -14,8 +14,8 @@ def generate_weighted_sequence(G, probabilities):
 
 def calculate_base_frequencies(sequence):
     length = len(sequence)
-    base_counts = Counter(sequence)  # 统计每个碱基的出现次数
-    # 计算频率
+    base_counts = Counter(sequence)  # Record the frequency of each base
+    # Calculate the frequency
     frequencies = {base: base_counts[base] / length for base in ['A', 'T', 'C', 'G']}
     return frequencies
 
